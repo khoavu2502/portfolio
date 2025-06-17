@@ -1,0 +1,58 @@
+<header>
+    <nav class="flex items-center px-5 py-3 text-sm font-source justify-between
+                lg:py-6 lg:px-10 lg:font-mono">
+        <!-- Logo -->
+        <a data-aos="fade-right" data-aos-delay="0" href="#" target="_blank" rel="noopener noreferrer" class="block w-14 h-14">
+            <svg
+                class="w-full h-full stroke-cyan-300 fill-none hover:animate-bounce direction-reverse"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+            >
+                <g>
+                    <path
+                        d="M12.8001 21.5382C12.5087 21.7065 12.3629 21.7906 12.208 21.8235C12.0709 21.8527 11.9293 21.8527 11.7922 21.8235C11.6373 21.7906 11.4915 21.7065 11.2001 21.5382L4.13984 17.462C3.8484 17.2937 3.70268 17.2096 3.5967 17.0919C3.50293 16.9877 3.43209 16.865 3.38879 16.7318C3.33984 16.5811 3.33984 16.4129 3.33984 16.0763V7.92385C3.33984 7.58732 3.33984 7.41905 3.38879 7.26842C3.43209 7.13514 3.50293 7.01245 3.5967 6.9083C3.70268 6.7906 3.8484 6.70647 4.13984 6.5382L11.2001 2.46196C11.4915 2.2937 11.6373 2.20957 11.7922 2.17664C11.9293 2.1475 12.0709 2.1475 12.208 2.17664C12.3629 2.20957 12.5087 2.2937 12.8001 2.46196L19.8604 6.5382C20.1518 6.70647 20.2975 6.7906 20.4035 6.9083C20.4973 7.01245 20.5681 7.13514 20.6114 7.26842C20.6604 7.41905 20.6604 7.58732 20.6604 7.92384V16.0763C20.6604 16.4129 20.6604 16.5811 20.6114 16.7318C20.5681 16.865 20.4973 16.9877 20.4035 17.0919C20.2975 17.2096 20.1518 17.2937 19.8604 17.462L12.8001 21.5382Z"
+                        fill-rule="evenodd"
+                    />
+                    <text
+                        x="12"
+                        y="12"
+                        text-anchor="middle"
+                        dominant-baseline="central"
+                        class="text-[8px] font-sans font-thin"
+                    >
+                        K
+                    </text>
+                </g>
+            </svg>
+        </a>
+
+        <!-- Navbar -->
+        <div class="flex flex-col px-20 py-28 space-y-8 bg-slate-800 font-mono h-screen
+                    transition-transform duration-1000 ease-in-out fixed z-50 top-0 right-0 items-center
+                    lg:gap-x-8 text-violet-300 text-sm md:w-1/2 lg:flex-row lg:bg-inherit lg:static lg:space-y-0
+                    lg:h-min lg:p-3 lg:translate-x-0 lg:justify-end"
+             [ngClass]="isMenuOpen ? 'translate-x-0' : 'translate-x-full'">
+            <a data-aos="fade-down" data-aos-delay="100" href="#about" (click)="handleMenu()" class="transition-colors duration-500 hover:text-cyan-300"><span class="text-cyan-300">01. </span>About</a>
+            <a data-aos="fade-down" data-aos-delay="200" href="#experience" (click)="handleMenu()" class="transition-colors duration-500 hover:text-cyan-300"><span class="text-cyan-300">02. </span>Experience</a>
+            <a data-aos="fade-down" data-aos-delay="300" href="#work" (click)="handleMenu()" class="transition-colors duration-500 hover:text-cyan-300"><span class="text-cyan-300">03. </span>Work</a>
+            <a data-aos="fade-down" data-aos-delay="400" href="#contact" (click)="handleMenu()" class="transition-colors duration-500 hover:text-cyan-300"><span class="text-cyan-300">04. </span>Contact</a>
+            <a data-aos="fade-down" data-aos-delay="500" href=".\assets\files\CV_DevOps_VuDinhKhoa_En.pdf" class="py-2 px-3 rounded-md border border-cyan-300 text-cyan-300 hover:animate-pulse" open>Resume</a>
+        </div>
+
+        <!-- Toggle icon -->
+        <button (click)="handleMenu()" class="w-8 h-8 group z-50 top-5 right-10 lg:hidden"
+                                                   [ngClass]="{'fixed': isMenuOpen, 'sticky': !isMenuOpen}">
+            <span
+                class="absolute h-0.5 w-full bg-cyan-300 transition-transform duration-300 ease-in-out"
+                [ngClass]="isMenuOpen ? 'rotate-45 top-3.5' : 'top-1'"></span>
+            <span
+                class="absolute h-0.5 w-full bg-cyan-300 transition-opacity duration-300 ease-in-out"
+                [ngClass]="isMenuOpen ? 'opacity-0' : 'top-3.5'"></span>
+            <span
+                class="absolute h-0.5 w-full bg-cyan-300 transition-transform duration-300 ease-in-out"
+                [ngClass]="isMenuOpen ? '-rotate-45 top-3.5' : 'top-6'"></span>
+        </button>
+    </nav>
+    <div [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}" class="fixed inset-0 bg-black bg-opacity-70 z-30"></div>
+</header>
