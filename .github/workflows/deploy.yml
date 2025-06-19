@@ -13,6 +13,10 @@ jobs:
       - name: Pull latest code
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        run: |
+          echo "Installing dependencies..."
+          npm ci
       - name: Build project
         run: |
           echo "Building..."
