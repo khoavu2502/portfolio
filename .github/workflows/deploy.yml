@@ -1,7 +1,7 @@
 name: Deploy to Self-Hosted Server
 
 on:
-  merge:
+  push:
     branches:
       - develop
 
