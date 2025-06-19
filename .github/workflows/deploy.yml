@@ -1,0 +1,32 @@
+name: Deploy to Self-Hosted Server
+
+on:
+  merge:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Pull latest code
+        uses: actions/checkout@v3
+
+      - name: Build project
+        run: |
+          echo "Building..."
+          npm run build
+
+      - name: Deloy to Nginx
+        run: |
+          echo "Deploying..."
+          sudo rsync -av --delete dist/portfolio/browser/ /var/www/portfolio/
+          sudo chown -R nginx:nginx /var/www/portfolio
+          sudo restorecon -Rv /var/www/portfolio
+      
+      - name: Restart app
+        run: |
+          echo "Restarting..."
+          sudo systemctl restart nginx
+
