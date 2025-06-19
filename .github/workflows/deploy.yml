@@ -33,4 +33,3 @@ jobs:
         run: |
           echo "Restarting..."
           sudo systemctl restart nginx
-
