@@ -11,10 +11,10 @@ import { Component } from '@angular/core';
 export class LandingPageComponent {
   email = "khoavu2502@gmail.com";
 
-  activeTab = 'helpdeskbox';
+  activeTab = 'vndata';
 
   tabs = [
-    { id: 'helpdeskbox', label: 'Helpdesk Box' },
+    { id: 'vndata', label: 'VNDATA' },
     { id: 'hopee', label: 'Hopee' },
     { id: 'hcmut', label: 'HCMUT' }
   ];
